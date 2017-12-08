@@ -118,7 +118,7 @@ class HasOne extends BaseRelation {
    * @return {Object}
    */
   relatedWhere (count) {
-    this.relatedQuery.whereRaw(`${this.$primaryTable}.${this.primaryKey} = ${this.$foreignTable}.${this.foreignKey}`)
+    this.relatedQuery.whereRaw(`${this.$primaryTable}."${this.primaryKey}" = ${this.$foreignTable}."${this.foreignKey}"`)
     if (count) {
       this.relatedQuery.count('*')
     }

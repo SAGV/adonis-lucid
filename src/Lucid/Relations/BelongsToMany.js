@@ -688,7 +688,7 @@ class BelongsToMany extends BaseRelation {
     }
 
     this._makeJoinQuery()
-    this.relatedQuery.whereRaw(`${this.$primaryTable}.${this.primaryKey} = ${this.$pivotTable}.${this.foreignKey}`)
+    this.relatedQuery.whereRaw(`${this.$primaryTable}."${this.primaryKey}" = ${this.$foreignTable}."${this.foreignKey}"`)
 
     /**
      * Add count clause if count is required
