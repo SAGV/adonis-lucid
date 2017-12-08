@@ -120,7 +120,7 @@ class BelongsTo extends BaseRelation {
     }
 
     const tableAlias = this.relatedTableAlias || this.$foreignTable
-    this.relatedQuery.whereRaw(`${this.$primaryTable}.${this.primaryKey} = ${tableAlias}.${this.foreignKey}`)
+    this.relatedQuery.whereRaw(`${this.$primaryTable}."${this.primaryKey}" = ${tableAlias}."${this.foreignKey}"`)
 
     if (count) {
       this.relatedQuery.count('*')

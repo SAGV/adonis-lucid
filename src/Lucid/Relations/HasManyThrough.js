@@ -249,7 +249,7 @@ class HasManyThrough extends BaseRelation {
    */
   relatedWhere (count) {
     this._makeJoinQuery()
-    this.relatedQuery.whereRaw(`${this.$primaryTable}.${this.primaryKey} = ${this.$foreignTable}.${this.foreignKey}`)
+    this.relatedQuery.whereRaw(`${this.$primaryTable}."${this.primaryKey}" = ${this.$foreignTable}."${this.foreignKey}"`)
 
     /**
      * Add count clause if count is required
